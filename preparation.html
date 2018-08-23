@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet"  href="scpWeb.css">
+  <script src="scpWeb.js"></script>
+<title> Preparation </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+</head>
+<body>{
+    font-family:Georgia;
+}
+
+
+/* Style the header */
+.header {
+    background-color:black;
+    padding:5px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Left and right column */
+.column.side {
+    width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+    width: 50%;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the footer */
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column.side, .column.middle {
+        width: 100%;
+    }
+}
+
+</style>
+</head>
+<body>
+
+  <body class="">
+    <div class="topnav" id="myTopnav">
+
+
+      <a href="homeRun.html">Home</a>
+
+
+      <div class="dropdown">
+        <button class="dropbtn"> Student
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="student.html">About Me and Transcripts</a>
+          <a href="stuScores.html">Scores and Activites</a>
+        </div>
+      </div>
+
+
+      <div class="dropdown">
+        <button class="dropbtn"> College
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="college.html"> Majors </a>
+          <a href="colFinancial.html">Financial Aid</a>
+        </div>
+      </div>
+
+
+      <div class="dropdown">
+        <button class="dropbtn" id="active"> Preparation
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="preparation.html"> Calender/To-Do </a>
+        </div>
+      </div>
+
+      <a href=aboutUs.html> About Us </a>
+
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+
+<div class="header">
+  <h2>Preparation</h2>
+</div>
+
+<div class="row">
+  <div class="column side" style="background-color:none;"><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <div class = todolist> </div>
+  <style>
+  body {
+    margin: 0;
+    min-width: 250px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul li{
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  ul li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+
+  ul li:hover {
+    background: #ddd;
+  }
+
+  ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+  }
+
+  ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+
+  .close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+  }
+
+  .close:hover {
+    background-color: #f44336;
+    color: white;
+  }
+
+  .header {
+    background-color:black;
+    padding: 10px 10px;
+    color: white;
+    text-align: center;
+  }
+
+  .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+  }
+
+  .addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+
+  .addBtn:hover {
+    background-color: #bbb;
+  }
+
+  </style>
+  </head>
+  <body>
+
+  <div id="myDIV" class="header">
+    <h2 style="margin:5px"><div class="mytoDDOlist">My To Do List</div></h2>
+    <input type="text" id="myInput" placeholder="Title...">
+    <span onclick="newElement()" class="addBtn">Add</span>
+  </div>
+
+  <ul id="myUL">
+    <li> Sign up for Student Aid (October 1) </li>
+    <li>Start college essays (Summer)</li>
+    <li>Study for SAT/ACT</li>
+    <li>Check application due dates (vary fro school to school)</li>
+    <li>Apply for scholarships (Summer)</li>
+  </ul>
+
+  <script>
+  var myNodelist = document.getElementsByTagName("LI");
+  var i;
+  for (i = 0; i < myNodelist.length; i++) {
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    myNodelist[i].appendChild(span);
+  }
+
+  var close = document.getElementsByClassName("close");
+  var i;
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+
+  var list = document.querySelector('ul');
+  list.addEventListener('click', function(ev) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');
+    }
+  }, false);
+
+  function newElement() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+      alert("You must write something!");
+    } else {
+      document.getElementById("myUL").appendChild(li);
+    }
+    document.getElementById("myInput").value = "";
+
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
+
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+  }
+  </script>
+</div>
+
+  <div class="column side" id="textbox" style="background-color:none;"><div class="Notes"><strong><center>Notes:</strong></center></div> <textarea style ="background-color:lightyellow;" rows= "16" cols="80"></textarea></div>
+
+  <div class="column middle" style="background-color:none;">
+    <style>
+      body
+      .container.calendar {
+        max-width:auto;
+        font family: Georgia;
+      }
+      .month{
+        text-align:center;
+        background:black;
+        font-size: 2.5 em;
+        letter-spacing:1px;
+        color:white;
+        padding: 5px;
+        border: 1px solid black;
+
+      }
+      table, th, td {
+        width: 100%;
+        table-layout: fixed;
+        text-align: center;
+        font-size:4.5;
+        border-collapse: collapse;
+        border: 2px solid black;
+      }
+      tr, th, td{
+        padding: 15px;
+      }
+      th{
+        background:lightgreen;
+        color: white;
+      }
+      td{
+        background:lightgray;
+      }
+      td:hover{
+        background-color: lightblue;
+      }
+      </style>
+         <link rel="stylesheet" href="scpWeb.css">
+       </head>
+
+
+
+       <body class = preparation>
+         <div class = calendar> </div>
+       <div class = "container">
+            <div class = "month">
+                <strong> <center>August</center> </strong>
+                <br>
+                <strong> <center>2018</center></strong>
+              </div>
+                <table>
+                     <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tues</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+
+                    <tr>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                      <td>1</td>
+                      <td>2</td>
+                      <td>3</td>
+                      <td>4</td>
+
+                    </tr>
+
+                  <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+
+                  </tr>
+
+                  <tr>
+                  <td>12</td>
+                  <td>13</td>
+                  <td>14</td>
+                  <td>15</td>
+                  <td>16</td>
+                  <td>17</td>
+                  <td>18</td>
+
+                </tr>
+
+                <tr>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td><a href="createDate.html">23</a></td>
+                <td>24</td>
+                <td>25</td>
+
+              </tr>
+
+                  <tr>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td></td>
+                <td></td>
+              </tr>
+                </table>
+      </div>
+      </div>
+
+
+
+
+</body>
+</html>
